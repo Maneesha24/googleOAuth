@@ -1,4 +1,6 @@
 const express = require("express");
+const mongoose = require('mongoose');
+require('./models/user');
 const app = express();
 
 require("./routes/authRoutes")(app);

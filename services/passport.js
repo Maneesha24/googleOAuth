@@ -1,5 +1,7 @@
-var googleStrategy = require("passport-google-oauth20").Strategy;
 const passport = require("passport");
+const mongoose = require('mongoose');
+const user = mongoose.model('users');
+var googleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("../config/keys");
 
 passport.use(
@@ -10,9 +12,7 @@ passport.use(
       callbackURL: "/auth/google/callback"
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log("accessToken", accessToken);
-      console.log("refreshToken", refreshToken);
-      console.log("profile", profile);
+      new user ({googleID : profile.id}).save();
     }
   )
 );

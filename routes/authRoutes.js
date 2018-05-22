@@ -4,7 +4,7 @@ const app = express();
 
 module.exports = app => {
   app.get(
-    "auth/google/callback",
+    "/auth/google/callback",
     passport.authenticate("google", {
       scope: ["profile", "email"]
     })
