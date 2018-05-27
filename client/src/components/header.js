@@ -19,12 +19,8 @@ renderContent(){
     return (
       <nav>
               <div className="nav-wrapper">
-                <Link
-                  to={this.props.auth ? '/surveys' : '/'}
-                  className="left brand-logo"
-                >
-                  googleOauth
-                </Link>
+
+
                 <ul className="right">
                   {this.renderContent()}
                 </ul>

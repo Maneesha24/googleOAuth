@@ -19,7 +19,6 @@ app.get('/api/current_user',(req,res)=>{
   );
 
 
-
   app.get("/", (req, res) => {
     res.send({ hi: "there" });
   });
